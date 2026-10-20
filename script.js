@@ -524,7 +524,7 @@ function startRace() {
   $("gamePrize").classList.add("hidden");
 
   $("gameMessage").textContent =
-    "Drive! Dodge the roadblocks and reach checkpoint 23.";
+    "DRIVE DRIVE DRIVE DRIVE";
 
   buildRaceBoard();
 
