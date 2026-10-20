@@ -1,3 +1,4 @@
+
 <!doctype html>
 <html lang="en">
 <head>
@@ -5,31 +6,37 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#edf4e8">
   <meta name="description" content="A birthday celebration for the one and only.">
-  <title>YOU'RE 23 ✦ birthday edition</title>
+  <title>YOU'RE 23 ✦ Birthday Edition</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <div class="sparkle-layer" aria-hidden="true"></div>
   <header class="topbar">
-    <a class="brand" href="#home">✦ YOU'RE 23</a>
+    <a class="brand" href="#home">guess who's 23!!! you are.</a>
     <button class="menu-toggle" id="menuToggle" aria-label="Open navigation">☰</button>
     <nav id="nav">
-      <a href="#photos">photos</a><a href="#memories">memories</a><a href="#letter">letter</a>
-      <a href="#quiz">birthday quiz</a><a href="#game">race to 23</a><a href="#playlist">soundtrack</a>
+      <a href="#photos">photos</a>
+      <a href="#pride">your year</a>
+      <a href="#letter">letter</a>
+      <a href="#game">race to 23</a>
+      <a href="#playlist">soundtrack</a>
     </nav>
-    <button class="sound-toggle" id="themeToggle" title="Change the vibe">☼</button>
+    <button class="sound-toggle" id="themeToggle" title="Toggle dark mode" aria-label="Toggle dark mode">☼</button>
   </header>
 
   <main>
     <section class="hero section" id="home">
-      <div class="hero-stickers" aria-hidden="true"><span>✦</span><span>♡</span><span>✧</span><span>⋆｡°✩</span></div>
+      <div class="hero-stickers" aria-hidden="true">
+        <span>✦</span><span>★</span><span>✧</span><span>LEVEL 23</span>
+      </div>
+
       <div class="hero-card">
         <p class="eyebrow">SPECIAL EDITION · BIRTHDAY BOY</p>
         <h1>YOU'RE <span class="age-number">23</span><span class="heart"> ✦</span></h1>
-        <p class="hero-subtitle" id="heroSubtitle">a whole new level unlocked. today, the world celebrates you.</p>
+        <p class="hero-subtitle">a whole new level unlocked. today, the world celebrates you.</p>
         <a class="button primary" href="#photos">START THE BIRTHDAY TOUR ↓</a>
         <p class="handwritten tiny">built for the birthday legend himself ✦</p>
       </div>
+
       <div class="floating-note note-one">LEVEL 23<br>UNLOCKED<br>✦ PLAYER ONE</div>
       <div class="floating-note note-two">TODAY'S QUEST:<br>have the best<br>birthday ever.</div>
     </section>
@@ -37,102 +44,265 @@
     <section class="section intro-section">
       <p class="eyebrow">THE BIRTHDAY BRIEFING</p>
       <h2>today is all about you.</h2>
-      <p class="intro-copy">23 years of you being you — and somehow you keep getting more legendary. here is a small collection of favorite memories, things that make you awesome, and a few birthday side quests. <span class="pink">✦</span></p>
+      <p class="intro-copy">
+        23 years of you being you — and somehow you keep getting more legendary.
+        Here's a small collection of favorite snapshots, a birthday side quest,
+        and a reminder of how proud I am of you. <span class="pink">✦</span>
+      </p>
+
       <div class="stats">
-        <div class="stat-card"><span class="stat-icon">✦</span><strong>23</strong><small>years of legendary</small></div>
-        <div class="stat-card"><span class="stat-icon">▣</span><strong>∞</strong><small>stories still to come</small></div>
-        <div class="stat-card"><span class="stat-icon">★</span><strong>1</strong><small>birthday VIP</small></div>
+        <div class="stat-card">
+          <span class="stat-icon">✦</span>
+          <strong>23</strong>
+          <small>years of legendary</small>
+        </div>
+        <div class="stat-card">
+          <span class="stat-icon">▣</span>
+          <strong>∞</strong>
+          <small>stories still to come</small>
+        </div>
+        <div class="stat-card">
+          <span class="stat-icon">★</span>
+          <strong>1</strong>
+          <small>birthday VIP</small>
+        </div>
       </div>
     </section>
 
     <section class="section" id="photos">
-      <div class="section-heading"><p class="eyebrow">THE HIGHLIGHT REEL</p><h2>23 years in snapshots <span>📷</span></h2><p>favorite faces, places, and moments worth keeping.</p></div>
-      <div class="photo-grid" id="photoGrid">
-        <figure class="polaroid tilt-left"><div class="photo-placeholder peach"><span>♡</span><small>add your favorite photo</small></div><figcaption>that day i keep thinking about</figcaption></figure>
-        <figure class="polaroid tilt-right"><div class="photo-placeholder lavender"><span>✿</span><small>add a silly selfie</small></div><figcaption>my favorite goofball</figcaption></figure>
-        <figure class="polaroid tilt-left"><div class="photo-placeholder blue"><span>☁</span><small>add a place you went</small></div><figcaption>somewhere with you</figcaption></figure>
-        <figure class="polaroid tilt-right"><div class="photo-placeholder mint"><span>☆</span><small>add a random memory</small></div><figcaption>one for the camera roll</figcaption></figure>
-        <figure class="polaroid tilt-right"><div class="photo-placeholder pink"><span>♡</span><small>add a favorite moment</small></div><figcaption>couldn't not keep this</figcaption></figure>
-        <figure class="polaroid tilt-left"><div class="photo-placeholder yellow"><span>☼</span><small>add a little adventure</small></div><figcaption>more days like this, please</figcaption></figure>
+      <div class="section-heading">
+        <p class="eyebrow">THE HIGHLIGHT REEL</p>
+        <h2>23 years in snapshots <span>📷</span></h2>
+        <p>favorite faces, places, and moments worth keeping.</p>
       </div>
-      <p class="tip">✎ To add real photos, put your images in the <code>assets</code> folder and follow the comments in <code>script.js</code>.</p>
+
+      <div class="photo-grid" id="photoGrid">
+        <figure class="polaroid tilt-left">
+          <div class="photo-placeholder peach"><span>✦</span><small>add your favorite photo</small></div>
+          <figcaption>that day i keep thinking about</figcaption>
+        </figure>
+        <figure class="polaroid tilt-right">
+          <div class="photo-placeholder lavender"><span>★</span><small>add a silly selfie</small></div>
+          <figcaption>my favorite goofball</figcaption>
+        </figure>
+        <figure class="polaroid tilt-left">
+          <div class="photo-placeholder blue"><span>☁</span><small>add a place you went</small></div>
+          <figcaption>somewhere worth remembering</figcaption>
+        </figure>
+        <figure class="polaroid tilt-right">
+          <div class="photo-placeholder mint"><span>☆</span><small>add a random memory</small></div>
+          <figcaption>one for the camera roll</figcaption>
+        </figure>
+        <figure class="polaroid tilt-right">
+          <div class="photo-placeholder pink"><span>✦</span><small>add a favorite moment</small></div>
+          <figcaption>couldn't not keep this</figcaption>
+        </figure>
+        <figure class="polaroid tilt-left">
+          <div class="photo-placeholder yellow"><span>☼</span><small>add a little adventure</small></div>
+          <figcaption>more days like this, please</figcaption>
+        </figure>
+      </div>
+
+      <p class="tip">
+        ✎ Add photos to your assets folder and replace the placeholders with image tags.
+      </p>
     </section>
 
-    <section class="section memories-section" id="memories">
-      <div class="section-heading"><p class="eyebrow">THE ORIGIN STORY</p><h2>greatest hits so far <span>✦</span></h2><p>some milestones, some chaos, all part of the story.</p></div>
-      <div class="timeline" id="timeline">
-        <article class="memory"><div class="memory-dot">♡</div><div class="memory-card"><span class="date-pill">THE BEGINNING</span><h3>when we first started talking</h3><p>i didn't know then how important you'd become to me. i'm very glad i kept replying. ♡</p><span class="memory-doodle">✧</span></div></article>
-        <article class="memory"><div class="memory-dot">♡</div><div class="memory-card"><span class="date-pill">A FAVORITE DAY</span><h3>one of our best days</h3><p>the kind of day i wish i could press pause on and live in for a little longer.</p><span class="memory-doodle">☁</span></div></article>
-        <article class="memory"><div class="memory-dot">♡</div><div class="memory-card"><span class="date-pill">THE LITTLE THINGS</span><h3>the way you make me laugh</h3><p>even when nothing special is happening, being with you makes it feel special.</p><span class="memory-doodle">✿</span></div></article>
-        <article class="memory"><div class="memory-dot">♡</div><div class="memory-card"><span class="date-pill">STILL TO COME</span><h3>all the memories we haven't made yet</h3><p>this scrapbook is nowhere near finished. we have so much more life to do together. ♡</p><span class="memory-doodle">☆</span></div></article>
+    <!-- NEW SECTION: PRIDE SLIDER -->
+    <section class="section pride-section" id="pride">
+      <div class="section-heading">
+        <p class="eyebrow">A VERY IMPORTANT QUESTION</p>
+        <h2>How proud am I of all you did this past year</h2>
+        <p>Go ahead. Try to guess. ✦</p>
+      </div>
+
+      <div class="pride-card">
+        <div class="pride-icon" id="prideIcon" aria-hidden="true">✦</div>
+
+        <div class="pride-number">
+          <span id="prideValue">0</span><span>%</span>
+        </div>
+
+        <input
+          type="range"
+          id="prideSlider"
+          min="0"
+          max="100"
+          value="0"
+          step="1"
+          aria-label="How proud am I of all you did this past year"
+          aria-valuetext="0 percent"
+        >
+
+        <div class="slider-labels">
+          <span>just getting started</span>
+          <span>ridiculously proud</span>
+        </div>
+
+        <p id="prideHint" class="pride-hint" aria-live="polite">
+          Slide to find out. There's only one correct answer.
+        </p>
+
+        <div id="prideCelebration" class="pride-celebration hidden" aria-live="polite">
+          <div class="celebration-badge">★ LEVEL 100 ★</div>
+          <h3>100% — AND NOT EVEN CLOSE TO ENOUGH.</h3>
+          <p>
+            I'm so incredibly proud of you. Of everything you've worked for,
+            everything you've overcome, and the person you've become this past
+            year. I hope you give yourself credit for how far you've come,
+            because you deserve every bit of it.
+          </p>
+          <p class="pride-signoff">Your biggest fan. Always. ✦</p>
+          <button class="button primary" id="prideReplay">
+            ONE MORE CELEBRATION ↻
+          </button>
+        </div>
+
+        <div class="confetti-container" id="confettiContainer" aria-hidden="true"></div>
       </div>
     </section>
 
     <section class="section letter-section" id="letter">
       <div class="letter-wrap">
-        <div class="section-heading"><p class="eyebrow">A NOTE FROM YOUR BIGGEST FAN</p><h2>birthday mail 💌</h2><p>the sentimental checkpoint. no skipping this one.</p></div>
+        <div class="section-heading">
+          <p class="eyebrow">A NOTE FROM YOUR BIGGEST FAN</p>
+          <h2>birthday mail 💌</h2>
+          <p>the sentimental checkpoint. no skipping this one.</p>
+        </div>
+
         <article class="letter-paper">
           <div class="tape"></div>
           <p class="letter-greeting">my love,</p>
-          <p>i wanted to make you something that you could come back to whenever you need a reminder of how much you mean to me.</p>
-          <p>you make my days brighter in ways you probably don't even notice. i love the way we can laugh about the most random things, how the little moments become my favorites, and how being around you feels like a deep breath after a long day.</p>
-          <p>thank you for being you — for the laughs, the kindness, the memories, and all the tiny things that add up to something really special. i hope you know how appreciated you are.</p>
-          <p>if i could pick someone to make more memories with, tell more silly stories to, and choose again and again, it would be you.</p>
-          <p>this is just a tiny website, but the feelings behind it are very real. i love you more than this little page can fit. ♡</p>
-          <p class="letter-signoff">always on your team,</p><p class="signature">your favorite person ♡</p>
+          <p>
+            i wanted to make you something that you could come back to whenever
+            you need a reminder of how much you mean to me.
+          </p>
+          <p>
+            you make my days brighter in ways you probably don't even notice.
+            i love the way we can laugh about the most random things, how the
+            little moments become my favorites, and how being around you feels
+            like a deep breath after a long day.
+          </p>
+          <p>
+            thank you for being you — for the laughs, the kindness, the memories,
+            and all the tiny things that add up to something really special.
+            i hope you know how appreciated you are.
+          </p>
+          <p>
+            if i could pick someone to make more memories with, tell more silly
+            stories to, and choose again and again, it would be you.
+          </p>
+          <p>
+            this is just a tiny website, but the feelings behind it are very real.
+            i love you more than this little page can fit. ♡
+          </p>
+          <p class="letter-signoff">always on your team,</p>
+          <p class="signature">your favorite person ♡</p>
+
           <button class="button tiny-button" id="letterSecret">one more thing...</button>
-          <p id="letterSecretText" class="secret-line hidden">you are loved. on the easy days, on the hard days, and all the regular days in between. ♡</p>
+          <p id="letterSecretText" class="secret-line hidden">
+            you are loved. on the easy days, on the hard days, and all the
+            regular days in between. ♡
+          </p>
         </article>
       </div>
     </section>
 
-    <section class="section quiz-section" id="quiz">
-      <div class="section-heading"><p class="eyebrow">BIRTHDAY TRIVIA</p><h2>how well do you know your lore? <span>✦</span></h2><p>prove your main-character credentials.</p></div>
-      <div class="quiz-card">
-        <div class="quiz-progress"><span id="quizProgress">question 1 of 4</span><span id="quizScore">♡ ♡ ♡ ♡</span></div>
-        <h3 id="quizQuestion">What is my favorite kind of day with you?</h3>
-        <div class="quiz-options" id="quizOptions"></div>
-        <p id="quizFeedback" class="quiz-feedback" aria-live="polite">choose your answer, cutie.</p>
-        <button class="button primary" id="nextQuestion" disabled>next question →</button>
-      </div>
-    </section>
-
     <section class="section game-section" id="game">
-      <div class="section-heading"><p class="eyebrow">THE BIG BIRTHDAY SIDE QUEST</p><h2>road to 23: turbo mode <span>🏁</span></h2><p>drive the birthday-mobile, dodge roadblocks, and reach checkpoint 23.</p></div>
+      <div class="section-heading">
+        <p class="eyebrow">THE BIG BIRTHDAY SIDE QUEST</p>
+        <h2>road to 23: turbo mode <span>🏁</span></h2>
+        <p>drive the birthday-mobile, dodge roadblocks, and reach checkpoint 23.</p>
+      </div>
+
       <div class="game-panel">
-        <div class="game-hud"><span>🏁 checkpoint: <strong id="gameScore">0</strong> / 23</span><span>⏱ <strong id="gameTime">0</strong>s</span></div>
-        <div class="game-board race-board" id="gameBoard"><div class="game-start"><span>🏎️</span><p>your mission: reach level 23.</p><p class="small-copy">Dodge cones and roadblocks. Arrow keys / A-D or the steering buttons.</p><button class="button primary" id="startGame">START YOUR ENGINE</button></div></div>
-        <div class="steering-controls"><button id="steerLeft" aria-label="Steer left">◀ LEFT</button><button id="steerRight" aria-label="Steer right">RIGHT ▶</button></div>
-        <p id="gameMessage" class="game-message">Reach checkpoint 23 without crashing. You got this, driver.</p>
-        <p id="gamePrize" class="prize hidden">🏆 LEVEL 23 COMPLETE! Your birthday reward: unlimited bragging rights and one very big hug. ✦</p>
+        <div class="game-hud">
+          <span>🏁 checkpoint: <strong id="gameScore">0</strong> / 23</span>
+          <span>⏱ <strong id="gameTime">0</strong>s</span>
+        </div>
+
+        <div class="game-board race-board" id="gameBoard">
+          <div class="game-start">
+            <span>🏎️</span>
+            <p>your mission: reach level 23.</p>
+            <p class="small-copy">Dodge roadblocks. Use arrow keys / A-D or the steering buttons.</p>
+            <button class="button primary" id="startGame">START YOUR ENGINE</button>
+          </div>
+        </div>
+
+        <div class="steering-controls">
+          <button id="steerLeft" aria-label="Steer left">◀ LEFT</button>
+          <button id="steerRight" aria-label="Steer right">RIGHT ▶</button>
+        </div>
+
+        <p id="gameMessage" class="game-message">
+          Reach checkpoint 23 without crashing. You got this, driver.
+        </p>
+        <p id="gamePrize" class="prize hidden">
+          🏆 LEVEL 23 COMPLETE! Your birthday reward: unlimited bragging rights
+          and one very big hug. ✦
+        </p>
       </div>
     </section>
 
     <section class="section playlist-section" id="playlist">
-      <div class="section-heading"><p class="eyebrow">BIRTHDAY SOUNDTRACK</p><h2>music for the main character <span>♫</span></h2><p>the soundtrack to another trip around the sun.</p></div>
+      <div class="section-heading">
+        <p class="eyebrow">BIRTHDAY SOUNDTRACK</p>
+        <h2>music for the main character <span>♫</span></h2>
+        <p>the soundtrack to another trip around the sun.</p>
+      </div>
+
       <div class="playlist-card">
-        <div class="playlist-art">♫<span>♡</span></div>
-        <div class="playlist-content"><p class="eyebrow">SIDE A · THE US EDITION</p><h3>songs for my favorite human</h3><p class="muted">A playlist is better when it's full of memories.</p>
+        <div class="playlist-art">♫<span>✦</span></div>
+        <div class="playlist-content">
+          <p class="eyebrow">SIDE A · THE BIRTHDAY EDITION</p>
+          <h3>songs for my favorite human</h3>
+          <p class="muted">A playlist is better when it's full of memories.</p>
+
           <ol id="songList">
-            <li><span>01</span><div><strong>your song here</strong><small>artist name</small></div><a href="https://open.spotify.com/" target="_blank" rel="noreferrer">play ↗</a></li>
-            <li><span>02</span><div><strong>the song that reminds me of you</strong><small>artist name</small></div><a href="https://open.spotify.com/" target="_blank" rel="noreferrer">play ↗</a></li>
-            <li><span>03</span><div><strong>our car / room / late-night song</strong><small>artist name</small></div><a href="https://open.spotify.com/" target="_blank" rel="noreferrer">play ↗</a></li>
+            <li>
+              <span>01</span>
+              <div><strong>your song here</strong><small>artist name</small></div>
+              <a href="https://open.spotify.com/" target="_blank" rel="noreferrer">play ↗</a>
+            </li>
+            <li>
+              <span>02</span>
+              <div><strong>the song that reminds me of you</strong><small>artist name</small></div>
+              <a href="https://open.spotify.com/" target="_blank" rel="noreferrer">play ↗</a>
+            </li>
+            <li>
+              <span>03</span>
+              <div><strong>our car / room / late-night song</strong><small>artist name</small></div>
+              <a href="https://open.spotify.com/" target="_blank" rel="noreferrer">play ↗</a>
+            </li>
           </ol>
-          <a class="button secondary" href="https://open.spotify.com/" target="_blank" rel="noreferrer">open our playlist ↗</a>
+
+          <a class="button secondary" href="https://open.spotify.com/" target="_blank" rel="noreferrer">
+            OPEN OUR PLAYLIST ↗
+          </a>
         </div>
       </div>
     </section>
 
     <section class="final-note section">
-      <div class="moon">☾</div><p class="eyebrow">QUEST COMPLETE</p><h2>here's to level 23.</h2>
-      <p>may this year bring big wins, good people, new places, ridiculous laughs, and more reasons to be proud of the person you are becoming.</p>
+      <div class="moon">☾</div>
+      <p class="eyebrow">QUEST COMPLETE</p>
+      <h2>here's to level 23.</h2>
+      <p>
+        may this year bring big wins, good people, new places, ridiculous laughs,
+        and more reasons to be proud of the person you are becoming.
+      </p>
       <p class="handwritten">new level. same legend. ✦</p>
       <a class="button primary" href="#home">back to the top ↑</a>
-      <button class="tiny-heart" id="surpriseButton" aria-label="Reveal a surprise">♡</button>
-      <p id="surpriseMessage" class="surprise-message hidden">SURPRISE! You are deeply loved, wildly appreciated, and officially cleared for an excellent year 23. ✦</p>
+      <button class="tiny-heart" id="surpriseButton" aria-label="Reveal a surprise">✦</button>
+      <p id="surpriseMessage" class="surprise-message hidden">
+        SURPRISE! You are deeply loved, wildly appreciated, and officially
+        cleared for an excellent year 23. ✦
+      </p>
     </section>
   </main>
-  <footer>handmade for level 23 · birthday edition <span>♡</span></footer>
+
+  <footer>handmade for level 23 · birthday edition <span>✦</span></footer>
   <script src="script.js"></script>
 </body>
 </html>
