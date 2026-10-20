@@ -424,8 +424,8 @@ function finishRace(won) {
   $("gamePrize").classList.toggle("hidden", !won);
 
   $("gameMessage").textContent = won
-    ? "you made it! checkpoint 23 reached. birthday legend status: confirmed. 🏆"
-    : "CRASH! The road got you this time. Reset and take another run at 23.";
+    ? "you did it you did it! 23 reached.◝(ᵔᗜᵔ)◜ 🏆"
+    : "ba ba BOII! maybe next time... ٩(ˋᗣˊ*)و";
 
   const board = $("gameBoard");
   const overlay = document.createElement("div");
