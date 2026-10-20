@@ -139,7 +139,7 @@ function celebratePride() {
   prideCelebration.classList.remove("hidden");
 
   prideHint.textContent =
-    "Plot twist: the slider ran out of room. I'm STILL proud of you. ✦";
+    "Oops: the slider ran out of room. I'm STILL proud of you. ✦";
 
   prideSlider.setAttribute(
     "aria-valuetext",
@@ -184,16 +184,16 @@ function updatePrideSlider() {
       "Slide to find out. There's only one correct answer.";
   } else if (value < 25) {
     prideHint.textContent =
-      "We're just getting started...";
+      "oooo what's going on...";
   } else if (value < 50) {
     prideHint.textContent =
-      "A pretty impressive year, I'd say. ✦";
+      "warmer. warmer. warmer. warmer.";
   } else if (value < 75) {
     prideHint.textContent =
-      "Look at everything you've accomplished.";
+      "ugh! just look at you go!!!";
   } else {
     prideHint.textContent =
-      "Keep going. You deserve the full 100.";
+      "GO GO GOGOGOGOGO. i will never doubt you!";
   }
 }
 
@@ -435,16 +435,16 @@ function finishRace(won) {
   overlay.innerHTML = `
     <div class="result-card">
       <span>${won ? "🏆" : "🚧"}</span>
-      <h3>${won ? "LEVEL 23 UNLOCKED" : "RUN ENDED"}</h3>
+      <h3>${won ? "congrats! U R OLD" : "BOOO. skill diff"}</h3>
       <p>
         ${
           won
-            ? "Another year. More roads to conquer."
-            : "Every legend needs a rematch."
+            ? "To more years to conquer"
+            : "Embarassing, i suppose you can have a second chance"
         }
       </p>
       <button class="button primary" id="restartRace">
-        ${won ? "DRIVE AGAIN" : "RETRY RUN"}
+        ${won ? "BRING ME THERE" : "don't u dare quit"}
       </button>
     </div>
   `;
