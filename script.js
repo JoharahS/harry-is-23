@@ -6,12 +6,12 @@
   - Keep filenames simple (example: first-date.jpg).
 */
 const CONFIG = {
-  relationshipStartDate: "", // Optional: "2024-06-14" to show days since you started dating
+  birthdayDate: "", // Optional: date for a birthday countdown if you add one later
   quiz: [
-    { question: "What is my favorite kind of day with you?", options: ["A cozy day doing absolutely nothing", "A huge fancy event", "A day where we don't talk", "A 5 a.m. tax seminar"], answer: 0, correct: "correct! honestly, any day with you wins. ♡" },
-    { question: "What do I want more of with you?", options: ["More memories and little adventures", "More arguments about nothing", "More boring spreadsheets", "To never take pictures"], answer: 0, correct: "yes!! more adventures, please. 💗" },
-    { question: "What is your official title?", options: ["Just some guy", "My favorite human", "Assistant to the regional manager", "Professional sock thief"], answer: 1, correct: "that's right. promotion approved. ♡" },
-    { question: "What happens when you finish this quiz?", options: ["You get a gold star", "You get reminded you're loved", "Both of the above", "Trick question: all three"], answer: 2, correct: "correct. your prize is me being very fond of you. ✨" }
+    { question: "What is the correct way to celebrate level 23?", options: ["Good food, good people, good chaos", "Doing absolutely nothing fun", "Filing taxes for entertainment", "Going to bed at 7 p.m."], answer: 0, correct: "correct. elite birthday strategy. ✦" },
+    { question: "What is your most important birthday buff?", options: ["+23 wisdom points", "Unlimited snacks", "Main-character energy", "All of the above"], answer: 3, correct: "correct! all stats boosted for level 23. 🏆" },
+    { question: "What should the year ahead include?", options: ["New adventures", "Big laughs", "Wins worth celebrating", "All of the above, obviously"], answer: 3, correct: "exactly. manifesting an absolutely legendary year. ✨" },
+    { question: "Who is the birthday VIP today?", options: ["A random guy", "The birthday legend reading this", "A traffic cone", "The cake"], answer: 1, correct: "that's you, birthday legend. take your bow. 🏁" }
   ]
 };
 
@@ -25,11 +25,6 @@ $("letterSecret").addEventListener("click", () => {
 });
 $("surpriseButton").addEventListener("click", () => $("surpriseMessage").classList.toggle("hidden"));
 
-if (CONFIG.relationshipStartDate) {
-  const start = new Date(CONFIG.relationshipStartDate + "T00:00:00");
-  const days = Math.max(0, Math.floor((new Date() - start) / 86400000));
-  $("daysCount").textContent = days.toLocaleString();
-}
 
 // Quiz
 let quizIndex = 0, quizScore = 0, answered = false;
@@ -77,45 +72,62 @@ $("nextQuestion").addEventListener("click", () => {
 });
 renderQuestion();
 
-// Catch-the-hearts mini-game. No external assets or libraries needed.
-let gameInterval = null, spawnInterval = null, gameScore = 0, gameTime = 20, gameActive = false;
-function endGame() {
-  gameActive = false; clearInterval(gameInterval); clearInterval(spawnInterval);
-  $("gameBoard").querySelectorAll(".catch-heart").forEach(el => el.remove());
-  $("gameMessage").textContent = gameScore >= 10 ? "heart collector extraordinaire. 💗" : "the hearts were shy, but you can try again!";
-  $("gamePrize").classList.toggle("hidden", gameScore < 10);
-  const start = document.createElement("div"); start.className = "game-start";
-  start.innerHTML = '<span>♡</span><p>you caught ' + gameScore + ' hearts!</p><button class="button primary" id="startGame">play again</button>';
-  $("gameBoard").appendChild(start);
-  $("startGame").addEventListener("click", startGame);
-}
-function spawnHeart() {
-  if (!gameActive) return;
+// ROAD TO 23: simple keyboard/touch racing game, no libraries required.
+let raceTimer = null, raceFrame = null, raceActive = false;
+let raceTime = 0, distance = 0, lane = 1, obstacles = [], lastSpawn = 0, lastTick = 0;
+const lanes = [0.22, 0.5, 0.78];
+function drawRace() {
   const board = $("gameBoard");
-  const heart = document.createElement("button");
-  heart.className = "catch-heart"; heart.textContent = ["♡", "💗", "💖", "💕"][Math.floor(Math.random()*4)];
-  heart.setAttribute("aria-label", "catch heart");
-  heart.style.left = Math.random() * (board.clientWidth - 50) + "px";
-  heart.style.top = (Math.random() * (board.clientHeight - 60) + 10) + "px";
-  heart.addEventListener("click", () => {
-    if (!gameActive) return;
-    gameScore++; $("gameScore").textContent = gameScore; heart.remove();
-    $("gameMessage").textContent = gameScore >= 10 ? "you unlocked the love note — keep going! ♡" : "yay! one more little heart collected.";
-    if (gameScore >= 10) $("gamePrize").classList.remove("hidden");
+  board.innerHTML = '<div class="race-skyline"><span>✦</span><span>☁</span><span>✦</span></div><div class="road"><div class="lane-mark mark-one"></div><div class="lane-mark mark-two"></div><div class="lane-mark mark-three"></div></div><div class="race-distance"><span>ROAD TO 23</span><strong>CHECKPOINT ' + Math.min(23, Math.floor(distance)) + ' / 23</strong></div><div class="race-car" id="raceCar" style="left:' + (lanes[lane]*100) + '%">🏎️</div>';
+  obstacles.forEach(o => {
+    const el = document.createElement('div'); el.className = 'road-obstacle'; el.textContent = o.type;
+    el.style.left = (lanes[o.lane]*100) + '%'; el.style.top = o.y + '%'; board.appendChild(el);
   });
-  board.appendChild(heart);
-  setTimeout(() => heart.remove(), 1500);
 }
-function startGame() {
-  clearInterval(gameInterval); clearInterval(spawnInterval);
-  gameScore = 0; gameTime = 20; gameActive = true;
-  $("gameScore").textContent = "0"; $("gameTime").textContent = gameTime; $("gamePrize").classList.add("hidden");
-  $("gameBoard").innerHTML = "";
-  $("gameMessage").textContent = "go go go! catch those hearts 💗";
-  spawnHeart(); spawnInterval = setInterval(spawnHeart, 650);
-  gameInterval = setInterval(() => {
-    gameTime--; $("gameTime").textContent = gameTime;
-    if (gameTime <= 0) endGame();
-  }, 1000);
+function moveCar(dir) {
+  if (!raceActive) return;
+  lane = Math.max(0, Math.min(2, lane + dir));
+  const car = $("raceCar"); if (car) car.style.left = (lanes[lane]*100) + '%';
 }
-$("startGame").addEventListener("click", startGame);
+function finishRace(won) {
+  raceActive = false; cancelAnimationFrame(raceFrame); clearInterval(raceTimer);
+  $("gamePrize").classList.toggle("hidden", !won);
+  $("gameMessage").textContent = won ? "you made it! checkpoint 23 reached. birthday legend status: confirmed. 🏆" : "CRASH! The road got you this time. Reset and take another run at 23.";
+  const board = $("gameBoard");
+  const overlay = document.createElement('div'); overlay.className = 'race-result';
+  overlay.innerHTML = '<div class="result-card"><span>' + (won ? '🏆' : '🚧') + '</span><h3>' + (won ? 'LEVEL 23 UNLOCKED' : 'RUN ENDED') + '</h3><p>' + (won ? 'Another year. More roads to conquer.' : 'Every legend needs a rematch.') + '</p><button class="button primary" id="startGame">' + (won ? 'DRIVE AGAIN' : 'RETRY RUN') + '</button></div>';
+  board.appendChild(overlay); $("startGame").addEventListener("click", startRace);
+}
+function raceStep(timestamp) {
+  if (!raceActive) return;
+  const dt = Math.min(40, timestamp - (lastTick || timestamp)); lastTick = timestamp;
+  // Travel steadily toward checkpoint 23; hazards increase with progress.
+  distance += dt * 0.0032;
+  if (timestamp - lastSpawn > Math.max(430, 1000 - distance * 20)) {
+    obstacles.push({ lane: Math.floor(Math.random()*3), y: -10, type: ["🚧", "🛢️", "🪨"][Math.floor(Math.random()*3)] }); lastSpawn = timestamp;
+  }
+  obstacles.forEach(o => o.y += dt * (0.025 + distance * 0.0007));
+  obstacles = obstacles.filter(o => o.y < 110);
+  const hit = obstacles.some(o => o.lane === lane && o.y > 76 && o.y < 94);
+  $("gameScore").textContent = Math.min(23, Math.floor(distance));
+  drawRace();
+  if (hit) { finishRace(false); return; }
+  if (distance >= 23) { finishRace(true); return; }
+  raceFrame = requestAnimationFrame(raceStep);
+}
+function startRace() {
+  cancelAnimationFrame(raceFrame); clearInterval(raceTimer);
+  raceActive = true; raceTime = 0; distance = 0; lane = 1; obstacles = []; lastSpawn = 0; lastTick = 0;
+  $("gameScore").textContent = "0"; $("gameTime").textContent = "0"; $("gamePrize").classList.add("hidden");
+  $("gameMessage").textContent = "Drive! Dodge the roadblocks and reach checkpoint 23.";
+  drawRace();
+  raceTimer = setInterval(() => { if (raceActive) { raceTime++; $("gameTime").textContent = raceTime; } }, 1000);
+  raceFrame = requestAnimationFrame(raceStep);
+}
+$("startGame").addEventListener("click", startRace);
+$("steerLeft").addEventListener("click", () => moveCar(-1));
+$("steerRight").addEventListener("click", () => moveCar(1));
+document.addEventListener("keydown", event => {
+  if (["ArrowLeft", "a", "A"].includes(event.key)) { event.preventDefault(); moveCar(-1); }
+  if (["ArrowRight", "d", "D"].includes(event.key)) { event.preventDefault(); moveCar(1); }
+});
