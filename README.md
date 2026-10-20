@@ -1,12 +1,6 @@
-# Our Little World ♡
+# Harry is 23 ♡
 
-A cute, responsive relationship scrapbook made with plain HTML, CSS, and JavaScript. No frameworks, build tools, or paid services required.
-
-## Preview it on your computer
-1. Unzip the folder.
-2. Open `index.html` in your browser.
-3. Edit `index.html`, `style.css`, and `script.js` in VS Code or any text editor.
-4. Refresh the browser to see changes.
+Personal project for my dearest.
 
 ## Make it yours
 - **Words and letter:** edit the text in `index.html`.
@@ -32,9 +26,3 @@ A cute, responsive relationship scrapbook made with plain HTML, CSS, and JavaScr
 5. Choose branch `main` and folder `/(root)`, then click **Save**.
 6. Wait a minute or two and refresh the Pages section. Your site URL will look like `https://YOUR-USERNAME.github.io/REPOSITORY-NAME/`.
 7. Open the URL in a private/incognito window to test it, then send the link to your boyfriend.
-
-## Surprise/privacy tips
-- GitHub Pages sites are public to anyone who has the URL (and may be indexed). Don't put private information, passwords, or anything you wouldn't want others to see in the repository.
-- If you want the surprise to stay secret, don't share the repository link; share only the published site URL when you're ready.
-- This is a static website. It doesn't upload photos or store messages from visitors; images need to be included in `assets/` and committed to the repository.
-- The page uses Google Fonts for typography; if those are blocked, it falls back to system fonts.
